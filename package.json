@@ -1,0 +1,21 @@
+{
+  "name": "delegate-this",
+  "version": "0.1.0",
+  "description": "`super` simple object delegation",
+  "main": "index.js",
+  "keywords": [
+      "delegate",
+      "delegation",
+      "object delegation",
+      "super",
+      "parent",
+      "this"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btoll/delegate-this"
+  },
+  "author": "Benjamin Toll <benjam72@yahoo.com> (http://www.benjamintoll.com)",
+  "license": "GPLv3"
+}
+
