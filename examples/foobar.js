@@ -1,8 +1,11 @@
-const d = require('../index');
+//const d = require('../index');
 
 const base = {
     derp() {
         console.log('i am derp');
+    },
+    herp() {
+        console.log('i am herp');
     },
     sum(list) {
         console.log(
@@ -13,17 +16,14 @@ const base = {
     }
 };
 
-const foo = d.create(base, {
+const foo = create(base, {
     derp() {
         console.log('foo');
         this.super();
-    },
-    herp() {
-        console.log('i am herp');
     }
 });
 
-const bar = d.create(foo, {
+const bar = create(foo, {
     derp() {
         console.log('bar');
         this.super();
@@ -34,7 +34,16 @@ const bar = d.create(foo, {
     }
 });
 
+const quux = create(bar, {
+    [Symbol.for('__INIT__')]: () => console.log('init `quux` object'),
+    herp() {
+        console.log('herp');
+        this.super();
+    }
+});
+
 bar.derp(); // 'bar', 'foo', 'i am derp'
 bar.herp(); // 'i am herp'
 bar.sum(5, 10, 15, 20); // 50
+quux.herp();
 

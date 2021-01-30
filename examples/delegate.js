@@ -21,7 +21,7 @@ const increment = function* () {
 
 const base = d.create({
     // Use Symbol expression as the key for `init` to ensure we don't overwrite any existing property.
-    [d.__INIT__]() {
+    [Symbol.for('__INIT__')]() {
         console.log('init p!');
         console.log(this.getUid());
     },

@@ -103,5 +103,5 @@ const isBasePrototype = proto =>
 const isFunction = fn =>
     Object.prototype.toString.call(fn) === '[object Function]';
 
-module.exports = create;
+//module.exports = create;
 
